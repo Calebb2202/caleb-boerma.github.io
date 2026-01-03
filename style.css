@@ -17,7 +17,7 @@ h2 {
     margin: 0;
     padding: 0;
     font-size: 24px;
-    color: #000000;
+    color: #222222;
     font-family: "Fredoka"
 }
 
@@ -34,6 +34,7 @@ p {
     padding: 0;
     font-family: 'Imprima';
     font-size: 20px;
+    color: #FFFFFF;
 }
 
 a {
@@ -226,7 +227,9 @@ a {
     align-items: center;
     margin-left: 40px;
     margin-right: 40px;
-    justify-content: space-between
+    justify-content: space-between;
+
+    margin-bottom: 80px;
 }
 
 
@@ -305,5 +308,140 @@ a {
     
     flex-shrink: 0;
 }
+
+/* #endregion */
+
+/* ######################### */
+/* #region Experience Region */
+/* ######################### */
+
+.experience-section {
+    display: flex;
+    margin-left: 40px;
+    margin-right: 40px
+}
+
+/* #region past-recent-arrow */
+
+.experience-section .past-recent-arrow {
+    margin-left: 30px;
+    margin-right: 30px;
+    padding-top: 72px;
+}
+
+.experience-section .past-recent-arrow h3 {
+    color: #FFFFFF;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+
+.experience-section .past-recent-arrow .arrow {
+    margin-left: 60px;
+}
+
+.experience-section .past-recent-arrow .arrow .line {
+    border-left: 3px dashed #FF7474;
+    height: 720px;
+    margin-left: 7px;
+
+    
+    flex-shrink: 0;
+}
+
+.experience-section .past-recent-arrow .arrow .point{
+  border: solid #FF7474;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 7px;
+
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+/* #endregion */
+
+.experience-section .experiences-container{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+}
+
+.experience-section h1 {
+    text-align: center;
+    font-size: 48px;
+    color: #FFFFFF;
+    margin-bottom: 12px;
+}
+
+.experience-section .experiences-container .experience-img-left {
+    display: flex;
+    width: 1200px;
+    height: 180px;
+    background-color: #4C4C4C;
+}
+
+.experience-section .experiences-container .experience-img-right {
+    display: flex;
+    width: 1200px;
+    height: 180px;
+    background-color: #4C4C4C;
+}
+
+.experience-details {
+    display: flex;
+    flex-direction: row;
+    margin-left: 20px;
+
+    background-color: #767676;
+    border-radius: 35px;
+    padding: 16px;
+    margin: 10px;
+
+    
+    width: 100%;
+}
+
+.experience-details .quick-info p {
+    font-size: 24px;
+}
+
+.quick-info {
+    display: flex;
+    flex-direction: column;
+    margin-right: 32px;
+}
+.experience-section .experiences-container img {
+    width: 160px;
+    height: 160px;
+
+    margin-left: 11px;
+    margin-right: 11px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.experience-section .experiences-container .position {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.experience-section .experiences-container .company {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.experience-section .experiences-container .date-and-city {
+    font-size: 20px;
+}
+
+.experience-section .experiences-container .tasks {
+    margin-right: 20px;
+}
+
 
 /* #endregion */
