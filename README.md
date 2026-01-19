@@ -1,2 +1,2 @@
 # caleb-boerma-website
-This is my own portfolio/resume website entirely made by myself. It utilizes HTML, Javascript, and CSS.
+This is my own portfolio/resume static website entirely made by myself. Using HTML and CSS.
