@@ -168,7 +168,7 @@ a {
 
 
     width: 100%;
-    max-width: 1440px;
+    /* max-width: 1440px; */
 
     margin-bottom: 4vh;
 
@@ -280,7 +280,7 @@ a {
 
 #projects-section {
     scroll-margin-top: 14vh;
-    max-width: 1440px;
+    /* max-width: 1440px; */
 }
 
 .projects {
@@ -395,7 +395,7 @@ a {
     margin-right: 40px;
 
     scroll-margin-top: 9vh;
-    max-width: 1440px;
+    /* max-width: 1440px; */
 }
 
 /* #region past-recent-arrow */
@@ -547,7 +547,7 @@ a {
     display: flex;
 
     width: 100%;
-    max-width: 1440px;
+    /* max-width: 1440px; */
     max-height: 144px;
 
     gap: 24px;
@@ -635,3 +635,4 @@ a {
 
 
 /* #endregion */
+
