@@ -125,7 +125,7 @@ a {
     /* Sizing stuff */
     height: 64px;
     width: 95%;
-    gap: 5vw;
+    gap: 64px;
 
     /* Centers the content Vertically */
     align-items: center;
