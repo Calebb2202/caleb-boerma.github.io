@@ -162,33 +162,42 @@ a {
     align-items: center;
     justify-content: center;
 
-    gap: 7vw;
-
     height: 90vh;
 
-
     width: 100%;
-    /* max-width: 1440px; */
-
     margin-bottom: 4vh;
 
-    scroll-margin-top: 7vh;
+    scroll-margin-top: 66px;
 
     border-bottom: 2px solid var(--accent-color);
 
     position: relative;
     overflow: hidden;
 
-    background: rgb(0, 0, 0, 0.7)
+    background: rgb(0, 0, 0, 0.7);
+}
+
+/* inner container constrained to 1440px and centered */
+.hero-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7vw;
+
+    width: 95%;
+    max-width: 1440px;
+    margin: 0 auto;
 }
 
 #bg-img {
     position: absolute;
     top: 0;
     left: 0;
-
     z-index: -2;
-    width: 100%;
+    /* span the full viewport width while matching hero height */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
     height: 100%;
     display: block;
     object-fit: cover;
@@ -202,6 +211,7 @@ a {
 
     min-width: 448px;
     width: 40vw;
+    max-width: 600px;
 
     padding: 2.5%;
 
@@ -265,6 +275,9 @@ a {
     min-width: 304px;
     min-height: 304px;
 
+    max-width: 600px;
+    max-height: 600px;
+
     /* makes image a circle */
     border-radius: 50%;
     
@@ -279,8 +292,9 @@ a {
 /* ######################## */
 
 #projects-section {
-    scroll-margin-top: 14vh;
-    /* max-width: 1440px; */
+    scroll-margin-top: 80px;
+    max-width: 1440px;
+    margin: 0 auto;
 }
 
 .projects {
@@ -288,31 +302,31 @@ a {
     align-items: center;
     justify-content: space-between;
     margin: auto;
-    margin-bottom: 5vh;
+    margin-bottom: 0;
 
     width: 95%;
-    height: 70%;
+    height: 60%;
+    max-height: 1024px;
 
     min-width: 1256px;
+    max-width: 1440px;
 }
 
 #projects-section h1 {
     text-align: center;
     font-size: 48px;
     color: #FFFFFF;
-    margin-bottom: 24px;
 }
 
 /* #region project container */
 
 .projects .project-container{
     background-color: #3B3B3B;
-    /* padding-left: 10px;
-    padding-right: 10px; */
     border-radius: 35px;
 
     height: 95%;
     width: 28%;
+    max-height: 600px;
 
     display: flex;
     align-items: center;
@@ -333,14 +347,10 @@ a {
 .project-container .project-content {
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
     background-color: #767676;
     border-top-left-radius: 27px;
     border-top-right-radius: 27px;
-    /* margin-left: 10px;
-    margin-right: 10px;
-    margin-bottom: 24px;
-    margin-top: 16px; */
-
 
     height: 95%;
     width: 90%;
@@ -361,13 +371,13 @@ a {
 .project-container .project-content img {
     width: 328px;
     height: 184px;
-    /* align: bottom; */
-    /* margin-left: 10px;
-    margin-top: 12px;
-    margin-bottom: 12px; */
 
     border-radius: 15px;
     object-fit: scale-down;
+
+    align-self: center;
+    margin-top: auto;
+    margin-bottom: 20px;
 }
 /* #endregion */
 
@@ -391,11 +401,14 @@ a {
 
 .experience-section {
     display: flex;
-    margin-left: 40px;
-    margin-right: 40px;
+    width: 95%;
+    max-width: 1440px; /* enforce the 1440px cap */
+    margin: 0 auto;
+    margin-top: 0;
+    box-sizing: border-box;
 
-    scroll-margin-top: 9vh;
-    /* max-width: 1440px; */
+    scroll-margin-top: 80px;
+    gap: 36px; /* space between the arrow column and the experiences container */
 }
 
 /* #region past-recent-arrow */
@@ -409,32 +422,58 @@ a {
 .experience-section .past-recent-arrow h3 {
     color: #FFFFFF;
     text-align: center;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    margin-left: 5px;
+    margin: 5px 0;
+    width: 100%;
 }
 
+
+.experience-section .past-recent-arrow {
+    margin-left: 30px;
+    margin-right: 30px;
+    padding-top: 72px;
+    display: flex;
+    flex-direction: column;
+    /* Let the .past-recent-arrow stretch to match the sibling container height */
+    justify-content: space-between;
+    align-items: center; /* center the headings and arrow column horizontally */
+}
+
+.experience-section .past-recent-arrow h3 {
+    color: #FFFFFF;
+    text-align: center;
+    margin: 5px 0;
+}
+
+/* arrow column sits between the two headings and expands to fill available space */
 .experience-section .past-recent-arrow .arrow {
-    margin-left: 60px;
+    /* keep arrow centered within the left column; the main container `gap` controls the horizontal distance */
+    margin-left: 0;
+    width: 30px; /* narrow visual column */
+    flex: 1 1 auto; /* expand to fill vertical space between the h3 elements */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* for absolutely-positioned line and point */
 }
 
 .experience-section .past-recent-arrow .arrow .line {
     border-left: 3px dashed var(--accent-color);
-    height: 720px;
-    margin-left: 7px;
-
-    
-    flex-shrink: 0;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .experience-section .past-recent-arrow .arrow .point{
-  border: solid var(--accent-color);
-  border-width: 0 3px 3px 0;
-  display: inline-block;
-  padding: 7px;
-
-  transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
+    border: solid var(--accent-color);
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 7px;
+    position: absolute;
+    left: 50%;
+    bottom: 0; /* sit at the bottom of the line */
+    transform: translate(-50%, 50%) rotate(45deg);
+    -webkit-transform: translate(-50%, 50%) rotate(45deg);
 }
 /* #endregion */
 
@@ -452,46 +491,34 @@ a {
     margin-bottom: 12px;
 }
 
-.experience-section .experiences-container .experience-img-left {
-    display: flex;
-    width: 1200px;
-    height: 180px;
-    background-color: #4C4C4C;
-
-    /* Keeps salmon corners alive otherwise they disappear */
-    position: relative; 
-    /* z-index: 0; */
-
-    /* for some reason 1 px overlaps on the joining corners so margin 1px fixes that */
-    margin: 1px
-}
-
+.experience-section .experiences-container .experience-img-left,
 .experience-section .experiences-container .experience-img-right {
     display: flex;
-    width: 1200px;
-    height: 180px;
+    align-items: center;
+    gap: 20px;
+
+    /* let the card span the container width and be responsive */
+    width: 100%;
+    box-sizing: border-box;
     background-color: #4C4C4C;
-
-    /* Keeps salmon corners alive otherwise they disappear */
-    position: relative; 
-    /* z-index: 0; */
-
-    /* for some reason 1 px overlaps on the joining corners so margin 1px fixes that */
-    margin: 1px
+    position: relative;
+    padding: 12px;
+    margin: 6px 0; /* small separation between cards */
 }
 
 .experience-details {
     display: flex;
     flex-direction: row;
-    margin-left: 20px;
+    gap: 36px;
 
     background-color: #767676;
-    border-radius: 35px;
+    border-radius: 20px;
     padding: 16px;
-    margin: 10px;
+    margin: 0;
 
-    
-    width: 100%;
+    /* make the details fill the remaining space of the card */
+    flex: 1 1 auto;
+    align-items: flex-start;
 }
 
 .experience-details .quick-info p {
@@ -501,16 +528,33 @@ a {
 .quick-info {
     display: flex;
     flex-direction: column;
-    margin-right: 32px;
+    /* increase width slightly so date lines don't wrap across two lines */
+    flex: 0 0 36%;
+    min-width: 220px;
 }
 .experience-section .experiences-container img {
-    width: 160px;
-    height: 160px;
+    /* responsive avatar sizing: percentage-based with sensible caps */
+    width: 12%;
+    max-width: 160px;
+    min-width: 80px;
+    height: auto;
 
-    margin-left: 11px;
-    margin-right: 11px;
-    margin-top: 8px;
-    margin-bottom: 8px;
+    margin: 8px 12px;
+    flex: 0 0 auto;
+}
+
+.experience-details .tasks,
+.experience-details .skills-used {
+    /* expand to share remaining horizontal space */
+    flex: 1 1 0;
+}
+
+.experience-details .tasks {
+    /* keep tasks and skills visually separated */
+}
+
+.experience-details .skills-used {
+    text-align: left;
 }
 
 .experience-section .experiences-container .position {
@@ -545,18 +589,24 @@ a {
 .contact-me-section {
     background-color: var(--accent-color);
     display: flex;
+    justify-content: center;
 
     width: 100%;
-    /* max-width: 1440px; */
-    max-height: 144px;
-
-    gap: 24px;
-    align-items: center;
 
     padding-top: 40px;
     padding-bottom: 40px;
 
     margin-top: 48px;
+}
+
+.contact-me-section .contact-me-inner {
+    display: flex;
+    width: 95%;
+    max-width: 1440px;
+    max-height: 144px;
+
+    gap: 24px;
+    align-items: center;
 }
 
 .contact-me-section .left-side {
