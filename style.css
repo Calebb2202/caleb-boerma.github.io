@@ -306,6 +306,8 @@ a {
 
     width: 95%;
     height: 60%;
+
+    min-height: 640px;
     max-height: 1024px;
 
     min-width: 1256px;
